@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.activity.MainActivity">
+
+    <TextView
+        android:id="@+id/main_fragment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/mainTitle"
+        android:textSize="20sp"
+        android:padding="15dp"
+        android:focusableInTouchMode="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/main_fragment_searchView"
+        />
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/main_fragment_searchView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:queryHint="Film ara"
+        android:layout_margin="5dp"
+        app:iconifiedByDefault="false"
+        android:background="@drawable/main_fragment_searchbar"
+        app:layout_constraintTop_toBottomOf="@id/main_fragment_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/main_fragment_filmtitle"
+        />
+
+    <TextView
+        android:id="@+id/main_fragment_filmtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/filmler"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_fragment_searchView"
+        app:layout_constraintBottom_toTopOf="@id/term"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/term"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constrainedHeight="true"
+        android:fitsSystemWindows="true"
+        android:background="@color/backgroundFragment"
+        app:layout_constraintTop_toBottomOf="@id/main_fragment_filmtitle"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_fragment_recyclerView"
+            android:fitsSystemWindows="true"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            android:paddingTop="5dp"
+            android:paddingHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/term"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="BottomAppBar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/floating_button_shape"
+        app:backgroundTint="@color/white"
+        android:src="@drawable/star_wars_icon"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>

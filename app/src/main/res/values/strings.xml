@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Star Wars MVC</string>
+
+    <string name="title">Title</string>
+    <string name="like">286 beğinildi.</string>
+    <string name="metin">Açılış Metni:</string>
+    <string name="mainTitle">En sevdiğin Star Wars filmi hangisi?</string>
+    <string name="filmler">Filmler</string>
+    <string name="film_name">film Name</string>
+    <string name="date">88.88.8888</string>
+    <string name="director">Sercan Vayni</string>
+</resources>
